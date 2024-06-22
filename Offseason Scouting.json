@@ -1,0 +1,319 @@
+{
+  "$schema": "../schema.json",
+  "title": "QRScout",
+  "page_title": "Crescendo 3467 ",
+  "sections": [
+    {
+      "name": "Prematch",
+      "preserveDataOnReset": true, 
+      "fields": [
+        {
+          "title": "Scouter Initials",
+          "type": "text",
+          "required": true,
+          "code": "scouter"
+        },
+        {
+          "title": "Match Number",
+          "type": "number",
+          "required": true,
+          "code": "matchNumber"
+        },
+        {
+          "title": "Robot",
+          "type": "select",
+          "required": true,
+          "code": "robot",
+          "choices": {
+            "R1": "Red 1",
+            "R2": "Red 2",
+            "R3": "Red 3",
+            "B1": "Blue 1",
+            "B2": "Blue 2",
+            "B3": "Blue 3"
+          },
+          "defaultValue": "R1"
+        },
+        {
+          "title": "Team Number",
+          "type": "number",
+          "required": true,
+          "code": "teamNumber"
+        },
+        {
+          "title": "No Show",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false,
+          "code": "noShow"
+        },
+        {
+          "title": "Starting Side",
+          "type": "select",
+          "required": false,
+          "code": "startingside",
+          "choices": {
+            "SoS": "Source Side",
+            "SsS": "Source Side Subwoofer",
+            "MiS": "Middle Subwoofer",
+            "AsS": "Amp Side Subwoofer",
+            "AmS": "Amp Side"
+          },
+          "defaultValue": "Middle Subwoofer"
+        },
+        {
+          "title": "Match Prediction",
+          "type": "select",
+          "required": false,
+          "code": "matchpredict",
+          "choices": {
+            "Red": "Red Alliance",
+            "Blue": "Blue Alliance",
+            "Tie": "Tie"
+          },
+          "defaultValue": "tie"
+        },
+        {
+          "title": "Blue Score Prediction",
+          "type": "number",
+          "required": "false",
+          "code": "blueMatchPrediction"
+        },
+        {
+          "title": "Red Score Prediction",
+          "type": "number",
+          "required": "false",
+          "code": "redMatchPrediction"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "fields": [
+        {
+          "code": "aum",
+          "title": "Exited starting zone (black line)",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "title": "auto notes order (FOR REFERENCE, DON'T DO):",
+          "type": "select",
+          "choices": { 
+            "AB1": "B1 (amp side wing note, blue alliance),",
+            "AB2": "B2 (aligned with speaker, blue alliance),",
+            "AB3": "B3 (podium note, blue alliance),",
+            "AR1": "R1 (amp side wing note, red alliance),",
+            "AR2": "R2 (aligned with speaker, red alliance),",
+            "AR3": "R3 (podium note, red alliance),",
+            "M1": "M1 (midline note closest to amp),",
+            "M2": "M2 (midline note 2nd from amp),",
+            "M3": "M3 (centermost note on midline),",
+            "M4": "M4 (midline note 2nd from source),",
+            "M5": "M5 (midline note closest to source),"
+          }
+        },
+        {
+          "title": "Auto Notes Picked Up, no spaces, etc b1m3m4m5",
+          "type": "text",
+          "code": "autopickup"
+        },
+        {
+          "title": "Auto Notes Scored",
+          "type": "counter",
+          "code": "autoscore",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "Auto Fou/Tech",
+          "title": " Auto Foul",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "fields": [
+        {
+          "code": "tamps",
+          "title": "Tele Amp Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tampm",
+          "title": "Tele Amp Missed",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tsc",
+          "title": "Tele Speaker Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tsm",
+          "title": "Tele Speaker Missed",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tfed",
+          "title": "Tele Notes Fed (Shot back for other alliance members to score)",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "Tele Fou/Tech",
+          "title": " Tele Foul",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "title": "Note Pickup Location",
+          "type": "select",
+          "required": true,
+          "code": "Npl",
+          "choices": {
+            "N": "None",
+            "G": "Ground",
+            "MS": "Human Player",
+            "B": "Both"
+          },
+          "defaultValue": "None"
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "fields": [
+        {
+          "title": "End Position",
+          "type": "select",
+          "required": true,
+          "code": "epo",
+          "choices": {
+            "No": "No Climb",
+            "P": "Parked",
+            "HC": "Hanging on chain"
+          },
+          "defaultValue": "No Climb"
+        },
+        {
+          "code": "nit",
+          "title": "Note in trap",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "title": "Harmony",
+          "type": "select",
+          "required": true,
+          "code": "harm",
+          "choices": {
+            "First": "Not Completed",
+            "Second": "Achieved (2 robots)",
+            "Third": "Achieved (3 robots)"
+          },
+          "defaultValue": "Not Completed"
+        }
+      ]
+    },
+    {
+      "name": "Postmatch",
+      "fields": [
+        {
+          "code": "dr",
+          "title": "Defense Skill",
+          "type": "select",
+          "multiSelect": true,
+          "choices": {
+            "Poor" : "Played ineffective defense or drew too many fouls",
+            "Average": "Played average defense",
+            "Effective1": "Effective at disrupting other teams' source pickup",
+            "Effective2": "Effective at slowing down the scoring of other teams",
+            "Very Effective": "Shut other teams down",
+            "x": "Did not play defense"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "dis",
+          "title": "Disabled?",
+          "type": "select",
+          "multiselect": true,
+          "choices": {
+            "brownout" : "Not fully dead but slower performance (browning out)",
+            "died&back" : "Died but came back",
+            "notestuck": "Note got stuck in the robot forcing it to stop playing offense",
+            "tipped" : "Tipped over",
+            "damaged" : "Damage to the robot caused it to disable",
+            "died" : "Died",
+            "x" : "Did not die"
+          },
+          "defaultValue": "x"
+        },
+        {
+          "code": "yc",
+          "title": "Yellow Card",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "rc",
+          "title": "Red Card",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "commentags",
+          "title": "Comment Tags (select all that apply)",
+          "type": "select",
+          "multiSelect": true,
+          "choices": {
+            "slowpickup": "Slow pickup at the source",
+            "slowamp" : "Slow placement at the amp",
+            "clumsy" : "Clumsy or tippy driving",
+            "patient" : "Plays patiently",
+            "poorhandoff": "Intake to shooter handoff is inconsistent",
+            "slowintake": "Ground pickup is slow",
+            "notesdropped": "Note(s) dropped from intake/shooter",
+            "blockedshots" : "Was able to block shots"
+          }
+          },
+        {
+          "code": "co",
+          "title": "Comments",
+          "type": "text",
+          "min": 0,
+          "max": 280,
+          "required": false
+        }
+      ]
+    }
+  ]
+}
